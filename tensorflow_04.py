@@ -39,18 +39,18 @@ with g2.as_default():
     # TensorFlow 的一个特性是变量初始化不是自动进行的。
     # 要初始化变量，最简单的方式是调用 global_variables_initializer。
     # 请注意 Session.run() 的用法（与 eval() 的用法大致相同）。
-    initialization = tf.global_variables_initializer()
-    with tf.Session() as Sess:
-        Sess.run(initialization) # 执行初始化
+    initialization2 = tf.global_variables_initializer()
+    with tf.Session() as Sess2_1:
+        Sess2_1.run(initialization2) # 执行初始化
         print('\n\b=====计算图-2-1=====')
         print('变量v：',v.eval())
         print('变量w：\n',w.eval())
 g3 = tf.Graph()
 with g3.as_default():
     u = tf.Variable(list(range(1,10)))
-    with tf.Session() as Sess3:
+    with tf.Session() as Sess3_1:
         initialization3 = tf.global_variables_initializer()
-        Sess3.run(initialization3)
+        Sess3_1.run(initialization3)
         print('\n\b=====计算图-3-1=====')
         print('变量u：',u.eval())
 print('\n注意图2和图3的初始化节点创建位置，图2再会话启动前，图3在会话中')
@@ -59,10 +59,11 @@ print('在第二次调用图时，尝试初始化')
 with g2.as_default():
     with tf.Session() as Sess2_2:
         print('\n\b=====计算图-2-2=====')
-        Sess2_2.run(initialization)
+        Sess2_2.run(initialization2)
         print('变量v：',v.eval())
 with g3.as_default():
     with tf.Session() as Sess3_2:
         print('\n\b=====计算图-3-2=====')
         Sess3_2.run(initialization3)
         print('变量u：',u.eval())
+print('\n没区别……')
