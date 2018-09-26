@@ -5,6 +5,10 @@ Created on Mon Sep 17 11:15:17 2018
 @author: LZC
 """
 # 本文件来源已不明确，大概目的为读取数据，生成描述
+# 
+# 在大多数情况下，您需要将整个文件加载到 DataFrame 中。
+# 下面的示例加载了一个包含加利福尼亚州住房数据的文件。
+
 import pandas as pd
 
 california_housing_dataframe = pd.read_csv("https://download.mlcc.google.com/mledu-datasets/california_housing_train.csv", 
