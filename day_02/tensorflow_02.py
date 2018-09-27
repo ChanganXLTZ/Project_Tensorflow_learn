@@ -21,11 +21,11 @@ g1 = tf.Graph()
 with g1.as_default():
     vir_A = tf.Variable([5,10,15,20])
     vir_B = tf.Variable([0,0,0,0])
-    vir_B = vir_B.assign([500,1000,1500,2000])
-       
+    vir_B = vir_B.assign([500,1000,1500,2000])       
+    initialization = tf.global_variables_initializer()
     with tf.Session() as Sess:
-        initialization = tf.global_variables_initializer()
-        #print(Sess.run(vir_A)) # 直接执行报错
+        Sess.run(initialization)
+        print(vir_A.eval()) # 直接执行报错
         
 # 自定义 图
 # Create a graph.

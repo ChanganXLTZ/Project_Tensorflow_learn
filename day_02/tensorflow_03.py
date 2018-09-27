@@ -30,6 +30,8 @@ with g1.as_default():
         print('原始数据长度：',m[0])
         print('原始数据：')
         print(sess.run(primes))
+        print('变量名：',primes.name)
+        print(ones.dtype)
         print('加1：')
         print(just_beyond_primes.eval())
 '''   
@@ -136,7 +138,7 @@ with g6.as_default():
         dtype=tf.int32)
 
     # Reshape the 8x2 matrix into a 3-D 2x2x4 tensor.
-    reshaped_2x2x4_tensor = tf.reshape(matrix, [2,2,4])
+    reshaped_2x2x4_tensor = tf.reshape(matrix, [8,2,1])
   
     # Reshape the 8x2 matrix into a 1-D 16-element tensor.
     one_dimensional_vector = tf.reshape(matrix, [16])
