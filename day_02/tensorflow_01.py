@@ -10,13 +10,16 @@ First one for tensorflow,do everything with a simple start.
 from __future__ import print_function
 import tensorflow
 c = tensorflow.constant('F*ck U,world!')
-
+one_ = tensorflow.ones(10)
 
 # 两种输出方式
 
 with tensorflow.Session() as Sess:
     print(c.eval()) 
-
+    init = tensorflow.global_variables_initializer()
+    Sess.run(init)
+    print(one_.eval())
+    
 
 sess = tensorflow.Session()
 print(sess.run(c))
