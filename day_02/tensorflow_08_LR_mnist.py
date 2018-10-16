@@ -41,10 +41,10 @@ batch_size = 128
 with tf.Session() as sess:
     sess.run(tf.global_variables_initializer())  # 初始化参数
     # 开始训练
-    for i in range(steps):
+    for i in range(steps+1):
         xs, ys = mnist.train.next_batch(batch_size) # 执行训练
         _, l = sess.run([train_op, cross_entropy], feed_dict={x:xs, y:ys})
         if i % 1000 == 0:
-            print("Steps %d , loss: %f" % (i, l))
+            print("Steps %d , loss: %f" %(i, l))
     # 测试集上测试
     print(sess.run(accuracy, feed_dict={x: mnist.test.images, y: mnist.test.labels}))
