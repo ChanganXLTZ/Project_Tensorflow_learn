@@ -1,7 +1,7 @@
 # Project_Tensorflow_learn
 
 
-## This project is created just for noting my Tensorflow learning.
+## This project is created just for taking notes of my Tensorflow learning.
 
 Most of them came from :https://developers.google.cn/machine-learning/crash-course/
 
